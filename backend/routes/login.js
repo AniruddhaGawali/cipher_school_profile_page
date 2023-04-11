@@ -4,7 +4,7 @@ const router = express.Router();
 const connect = require("./database");
 const bcrypt = require("bcryptjs");
 
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     const database = client.db("UserDataBase");
     const collection = database.collection("user");
 
-    const a = await collection
+    const data = await collection
       .aggregate([
         {
           $match: { "user.email": email },
@@ -20,18 +20,18 @@ router.get("/", async (req, res) => {
       ])
       .toArray();
 
-    if (a.length === 0) {
+    if (data.length === 0) {
       res.json({ isSuccess: false });
       return;
     } else {
-      const b = await bcrypt.compare(password, a[0].user.password);
+      const b = await bcrypt.compare(password, data[0].user.password);
       if (!b) {
         res.json({ isSuccess: false });
         return;
       }
     }
 
-    res.json({ isSuccess: true });
+    res.json({ isSuccess: true, data: data[0] });
   } catch (e) {
     console.error(e);
     res.json({ isSuccess: false });
