@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
           "social_links.linkedin": social.linkedin,
           "social_links.github": social.github,
           "social_links.website": social.website,
-          "Professional_info.highest_education ": prof_info.highest_education,
+          "Professional_info.highest_education": prof_info.highest_education,
           "Professional_info.current_education": prof_info.current_education,
         },
       }

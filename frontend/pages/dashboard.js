@@ -4,6 +4,9 @@ import Head from "next/head";
 import UserContext from "../context/userdata";
 import UserInfo from "../components/userinfo";
 import AboutMe from "../components/aboutme";
+import Social from "../components/social";
+import Prof_info from "../components/prof_info";
+import ChangePassword from "../components/changepassword";
 
 const Dashboard = () => {
   const { user, setUser } = React.useContext(UserContext);
@@ -19,6 +22,9 @@ const Dashboard = () => {
         {console.log(user)}
         <UserInfo />
         <AboutMe />
+        <Social />
+        <Prof_info />
+        <ChangePassword />
       </main>
     </div>
   );

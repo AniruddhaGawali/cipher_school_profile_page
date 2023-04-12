@@ -13,6 +13,7 @@ body {
   margin: 0;
   font-family: "popins", sans-serif;
   background: #15181e;
+  overflow-x: hidden;
 }
 
 * {

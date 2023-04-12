@@ -7,7 +7,7 @@ import { RiUserSmileLine } from "react-icons/ri";
 const UserInfo = () => {
   const { user } = React.useContext(UserContext);
   return (
-    <div className="relative flex items-center min-[550px]:justify-between justify-center w-full bg-background h-fit text-white px-10 py-3">
+    <div className="relative flex items-center min-[550px]:justify-between justify-between w-full bg-background h-fit text-white px-10 py-3">
       <img
         src="/cover.png"
         alt=""
