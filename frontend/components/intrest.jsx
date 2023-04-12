@@ -6,7 +6,7 @@ import UserContext from "../context/userdata";
 import { toast } from "react-toastify";
 
 const Intrest = () => {
-  const { user } = React.useContext(UserContext);
+  const { user, fetchUser } = React.useContext(UserContext);
   const [edit, setEdit] = React.useState(false);
   const [userIntrest, setUserIntrest] = React.useState(user.interests);
 
@@ -40,6 +40,7 @@ const Intrest = () => {
     } else {
       toast.success("Intrests Updated");
       setEdit(false);
+      await fetchUser();
     }
   };
 

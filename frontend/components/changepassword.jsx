@@ -5,7 +5,7 @@ import Button from "./button";
 import { toast } from "react-toastify";
 import PasswordInput from "./passwordinput";
 const ChangePassword = () => {
-  const { user } = React.useContext(UserContext);
+  const { user, fetchUser } = React.useContext(UserContext);
 
   const [newpassword, setNewPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
@@ -37,6 +37,7 @@ const ChangePassword = () => {
       setConfirmPassword("");
       setPassword("");
       setEdit(false);
+      await fetchUser();
     }
   };
 

@@ -5,14 +5,13 @@ import Button from "./button";
 import { toast } from "react-toastify";
 
 const AboutMe = () => {
-  const { user } = React.useContext(UserContext);
+  const { user, fetchUser } = React.useContext(UserContext);
 
   const [aboutme, setAboutme] = React.useState(user.aboutme);
   const [edit, setEdit] = React.useState(false);
 
   const updateAboutMe = async () => {
     if (edit) {
-      console.log(user._id);
       const res = await fetch("http://localhost:5000/updateprofile", {
         method: "POST",
         headers: {
@@ -32,6 +31,7 @@ const AboutMe = () => {
         toast.success("About Me Updated");
       }
       setEdit(false);
+      await fetchUser();
     } else {
       setEdit(true);
     }

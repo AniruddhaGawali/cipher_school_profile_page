@@ -21,6 +21,7 @@ app.use("/changepassword", require("./routes/changepassword"));
 app.use("/addintrest", require("./routes/addintrest"));
 app.use("/follower_following", require("./routes/follower_following"));
 app.use("/add_following", require("./routes/add_following"));
+app.use("/userdata", require("./routes/getuser"));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import Select from "./select";
 
 const Prof_info = () => {
-  const { user } = React.useContext(UserContext);
+  const { user, fetchUser } = React.useContext(UserContext);
 
   const [highestEducation, setHighestEducation] = React.useState(
     user.Professional_info.highest_education
@@ -59,6 +59,7 @@ const Prof_info = () => {
         toast.success("Updated Professional Information");
       }
       setEdit(false);
+      fetchUser();
     } else {
       setEdit(true);
     }

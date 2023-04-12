@@ -13,7 +13,7 @@ import Button from "./button";
 import UserContext from "../context/userdata";
 
 const Social = () => {
-  const { user } = React.useContext(UserContext);
+  const { user, fetchUser } = React.useContext(UserContext);
 
   const [edit, setEdit] = React.useState(false);
   const [linkedin, setLinkedin] = React.useState(user.social_links.linkedin);
@@ -50,6 +50,7 @@ const Social = () => {
 
       if (data.isSuccess) {
         toast.success("Social Updated Successfully");
+        fetchUser();
       }
       setEdit(false);
     } else {

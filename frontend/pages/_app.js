@@ -7,34 +7,24 @@ import UserContext from "../context/userdata";
 import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
-  const [user, setUser] = useState({
-    _id: "64356d928faba27cc1ee1702",
-    user: {
-      firstname: "xyz",
-      lastname: "xyz",
-      email: "uvw@gmail.com",
-      phone: "123456789",
-      password: "$2a$10$tokK4Aq2mHTS2iJzxa6DA.0BIzehUkPH4y0ku1SYQgAh8aojoNgDu",
-    },
-    aboutme: "",
-    social_links: {
-      facebook: "",
-      twitter: "",
-      instagram: "",
-      linkedin: "",
-      github: "",
-    },
-    Professional_info: {
-      highest_education: "",
-      current_education: "",
-    },
-    interests: [],
-    followers: [],
-    following: [],
-  });
+  const [user, setUser] = useState(null);
+
+  const fetchUser = async () => {
+    const res = await fetch("http://localhost:5000/userdata", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ _id: user._id }),
+    });
+    const data = await res.json();
+    console.log(data);
+    setUser(data.data);
+  };
+
   return (
     <>
-      <UserContext.Provider value={{ user, setUser }}>
+      <UserContext.Provider value={{ user, setUser, fetchUser }}>
         <Component {...pageProps} />
         <ToastContainer />
       </UserContext.Provider>
