@@ -8,6 +8,7 @@ import Social from "../components/social";
 import Prof_info from "../components/prof_info";
 import ChangePassword from "../components/changepassword";
 import Intrest from "../components/intrest";
+import HeatMap from "../components/cal-heatmap";
 
 const Dashboard = () => {
   const { user, setUser } = React.useContext(UserContext);
@@ -23,6 +24,7 @@ const Dashboard = () => {
         {console.log(user)}
         <UserInfo />
         <AboutMe />
+        <HeatMap />
         <Social />
         <Prof_info />
         <ChangePassword />

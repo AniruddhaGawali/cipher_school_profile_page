@@ -19,3 +19,20 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.react-calendar-heatmap .color-empty {
+  fill: #262c36 !important;
+}
+
+.react-calendar-heatmap .color-scale-1 {
+  fill: rgb(237, 193, 150);
+}
+.react-calendar-heatmap .color-scale-2 {
+  fill: rgb(238, 180, 122);
+}
+.react-calendar-heatmap .color-scale-3 {
+  fill: rgb(233, 154, 76);
+}
+.react-calendar-heatmap .color-scale-4 {
+  fill: rgb(243, 145, 46, 1);
+}
