@@ -45,7 +45,7 @@ const ChangePassword = () => {
       <div className=" text-white p-10">
         <h3 className=" w-full flex justify-between items-center ">
           <span className="text-xl font-bold uppercase">
-            PROFESSIONAL INFORMATION
+            PASSWORD & SECURITY
           </span>
           <span className="w-20">
             <Button

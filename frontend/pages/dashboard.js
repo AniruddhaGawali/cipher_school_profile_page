@@ -7,6 +7,7 @@ import AboutMe from "../components/aboutme";
 import Social from "../components/social";
 import Prof_info from "../components/prof_info";
 import ChangePassword from "../components/changepassword";
+import Intrest from "../components/intrest";
 
 const Dashboard = () => {
   const { user, setUser } = React.useContext(UserContext);
@@ -25,6 +26,7 @@ const Dashboard = () => {
         <Social />
         <Prof_info />
         <ChangePassword />
+        <Intrest />
       </main>
     </div>
   );
